@@ -18,6 +18,8 @@
 #define ENTITY_BOREDOM_MAX 15 // original 15
 #define HUNTER_FEAR_MAX 15 // original 15
 #define DEFAULT_GHOST_ID 68057
+#define MAX_EVIDENCE_TYPES 7
+
 
 typedef unsigned char EvidenceByte; // Just giving a helpful name to unsigned char for evidence bitmasks
 
@@ -112,14 +114,21 @@ struct HunterCollection {
     int size;
 };
 
+// Device collection
+struct DeviceCollection {
+    const enum EvidenceType* devices;
+    int size;
+};
 
 struct Hunter {
     char name[MAX_HUNTER_NAME];
     struct CaseFile* case_file;
+    struct Room* current_room;
+    // device used, keeping track of all device used
+    struct DeviceCollection device_collection;
     enum EvidenceType device;
     struct RoomStack path;
     enum LogReason log_reason;
-    struct Room* current_room;
     int id;
     int boredom;
     int fear;

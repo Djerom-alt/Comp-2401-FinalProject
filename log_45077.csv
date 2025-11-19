@@ -1,0 +1,512 @@
+1763595388503,hunter,45077,Van,emf,0,0,INIT,William
+1763595388523,hunter,45077,Van,emf,1,0,MOVE,Hallway
+1763595388525,hunter,45077,Hallway,emf,0,1,MOVE,Boy's Bedroom
+1763595388527,hunter,45077,Boy's Bedroom,emf,1,1,RETURN_START,start
+1763595388537,hunter,45077,Boy's Bedroom,emf,1,1,MOVE,Hallway
+1763595388539,hunter,45077,Hallway,emf,1,1,MOVE,Van
+1763595388542,hunter,45077,Van,emf,1,1,RETURN_COMPLETE,complete
+1763595388545,hunter,45077,,orbs,1,1,SWAP,emf->orbs
+1763595388583,hunter,45077,Van,orbs,2,1,MOVE,Hallway
+1763595388586,hunter,45077,Hallway,orbs,0,2,MOVE,Van
+1763595388608,hunter,45077,Van,orbs,1,2,MOVE,Hallway
+1763595388611,hunter,45077,Hallway,orbs,2,2,MOVE,Basement
+1763595388646,hunter,45077,Basement,orbs,3,2,MOVE,Hallway
+1763595388651,hunter,45077,Hallway,orbs,0,3,RETURN_START,start
+1763595388654,hunter,45077,Hallway,orbs,0,3,MOVE,Basement
+1763595388657,hunter,45077,Basement,orbs,0,3,MOVE,Hallway
+1763595388660,hunter,45077,Hallway,orbs,0,3,MOVE,Van
+1763595388662,hunter,45077,Van,orbs,0,3,RETURN_COMPLETE,complete
+1763595388664,hunter,45077,,radio,0,3,SWAP,orbs->radio
+1763595388695,hunter,45077,Van,radio,1,3,MOVE,Hallway
+1763595388698,hunter,45077,Hallway,radio,0,4,MOVE,Boy's Bedroom
+1763595388700,hunter,45077,Boy's Bedroom,radio,1,4,MOVE,Hallway
+1763595388704,hunter,45077,Hallway,radio,0,5,MOVE,Master Bedroom
+1763595388722,hunter,45077,Master Bedroom,radio,1,5,MOVE,Hallway
+1763595388725,hunter,45077,Hallway,radio,0,6,MOVE,Basement
+1763595388729,hunter,45077,Basement,radio,1,6,RETURN_START,start
+1763595388736,hunter,45077,Basement,radio,1,6,MOVE,Hallway
+1763595388753,hunter,45077,Hallway,radio,1,6,MOVE,Master Bedroom
+1763595388755,hunter,45077,Master Bedroom,radio,1,6,MOVE,Hallway
+1763595388786,hunter,45077,Hallway,radio,1,6,MOVE,Boy's Bedroom
+1763595388790,hunter,45077,Boy's Bedroom,radio,1,6,MOVE,Hallway
+1763595388793,hunter,45077,Hallway,radio,1,6,MOVE,Van
+1763595388799,hunter,45077,Van,radio,1,6,RETURN_COMPLETE,complete
+1763595388804,hunter,45077,,temp,1,6,SWAP,radio->temp
+1763595388816,hunter,45077,Van,temp,2,6,MOVE,Hallway
+1763595388831,hunter,45077,Hallway,temp,0,7,MOVE,Master Bedroom
+1763595388882,hunter,45077,Master Bedroom,temp,1,7,MOVE,Hallway
+1763595388895,hunter,45077,Hallway,temp,0,8,MOVE,Bathroom
+1763595388897,hunter,45077,Bathroom,temp,1,8,MOVE,Hallway
+1763595388900,hunter,45077,Hallway,temp,0,9,MOVE,Bathroom
+1763595388902,hunter,45077,Bathroom,temp,1,9,MOVE,Hallway
+1763595388914,hunter,45077,Hallway,temp,0,10,MOVE,Boy's Bedroom
+1763595388917,hunter,45077,Boy's Bedroom,temp,1,10,MOVE,Hallway
+1763595388920,hunter,45077,Hallway,temp,0,11,MOVE,Bathroom
+1763595388931,hunter,45077,Bathroom,temp,1,11,MOVE,Hallway
+1763595388941,hunter,45077,Hallway,temp,0,12,MOVE,Kitchen
+1763595388945,hunter,45077,Kitchen,temp,1,12,MOVE,Hallway
+1763595388958,hunter,45077,Hallway,temp,2,12,MOVE,Master Bedroom
+1763595388961,hunter,45077,Master Bedroom,temp,3,12,RETURN_START,start
+1763595388996,hunter,45077,Master Bedroom,temp,3,12,MOVE,Hallway
+1763595388998,hunter,45077,Hallway,temp,3,12,MOVE,Kitchen
+1763595389001,hunter,45077,Kitchen,temp,3,12,MOVE,Hallway
+1763595389004,hunter,45077,Hallway,temp,3,12,MOVE,Bathroom
+1763595389006,hunter,45077,Bathroom,temp,3,12,MOVE,Hallway
+1763595389019,hunter,45077,Hallway,temp,3,12,MOVE,Boy's Bedroom
+1763595389022,hunter,45077,Boy's Bedroom,temp,3,12,MOVE,Hallway
+1763595389025,hunter,45077,Hallway,temp,3,12,MOVE,Bathroom
+1763595389028,hunter,45077,Bathroom,temp,3,12,MOVE,Hallway
+1763595389031,hunter,45077,Hallway,temp,3,12,MOVE,Bathroom
+1763595389033,hunter,45077,Bathroom,temp,3,12,MOVE,Hallway
+1763595389036,hunter,45077,Hallway,temp,3,12,MOVE,Master Bedroom
+1763595389039,hunter,45077,Master Bedroom,temp,3,12,MOVE,Hallway
+1763595389042,hunter,45077,Hallway,temp,3,12,MOVE,Van
+1763595389044,hunter,45077,Van,temp,3,12,RETURN_COMPLETE,complete
+1763595389046,hunter,45077,Van,temp,3,12,EXIT,evidence
+1763595625969,hunter,45077,Van,emf,0,0,INIT,William
+1763595625994,hunter,45077,Van,emf,1,0,MOVE,Hallway
+1763595626010,hunter,45077,Hallway,emf,0,1,MOVE,Boy's Bedroom
+1763595626012,hunter,45077,Boy's Bedroom,emf,1,1,MOVE,Hallway
+1763595626015,hunter,45077,Hallway,emf,0,2,MOVE,Bathroom
+1763595626018,hunter,45077,Bathroom,emf,1,2,MOVE,Hallway
+1763595626020,hunter,45077,Hallway,emf,0,3,MOVE,Kitchen
+1763595626023,hunter,45077,Kitchen,emf,1,3,MOVE,Garage
+1763595626025,hunter,45077,Garage,emf,2,3,MOVE,Kitchen
+1763595626027,hunter,45077,Kitchen,emf,3,3,MOVE,Garage
+1763595626031,hunter,45077,Garage,emf,4,3,MOVE,Utility Room
+1763595626033,hunter,45077,Utility Room,emf,5,3,MOVE,Garage
+1763595626036,hunter,45077,Garage,emf,6,3,MOVE,Kitchen
+1763595626039,hunter,45077,Kitchen,emf,7,3,MOVE,Living Room
+1763595626041,hunter,45077,Living Room,emf,8,3,MOVE,Kitchen
+1763595626044,hunter,45077,Kitchen,emf,9,3,MOVE,Living Room
+1763595626046,hunter,45077,Living Room,emf,10,3,RETURN_START,start
+1763595626052,hunter,45077,Living Room,emf,10,3,MOVE,Kitchen
+1763595626054,hunter,45077,Kitchen,emf,10,3,MOVE,Living Room
+1763595626056,hunter,45077,Living Room,emf,10,3,MOVE,Kitchen
+1763595626059,hunter,45077,Kitchen,emf,10,3,MOVE,Garage
+1763595626062,hunter,45077,Garage,emf,10,3,MOVE,Utility Room
+1763595626065,hunter,45077,Utility Room,emf,10,3,MOVE,Garage
+1763595626068,hunter,45077,Garage,emf,10,3,MOVE,Kitchen
+1763595626070,hunter,45077,Kitchen,emf,10,3,MOVE,Garage
+1763595626073,hunter,45077,Garage,emf,10,3,MOVE,Kitchen
+1763595626083,hunter,45077,Kitchen,emf,10,3,MOVE,Hallway
+1763595626085,hunter,45077,Hallway,emf,10,3,MOVE,Bathroom
+1763595626094,hunter,45077,Bathroom,emf,10,3,MOVE,Hallway
+1763595626104,hunter,45077,Hallway,emf,10,3,MOVE,Boy's Bedroom
+1763595626106,hunter,45077,Boy's Bedroom,emf,10,3,MOVE,Hallway
+1763595626109,hunter,45077,Hallway,emf,10,3,MOVE,Van
+1763595626112,hunter,45077,Van,emf,10,3,RETURN_COMPLETE,complete
+1763595626114,hunter,45077,,orbs,10,3,SWAP,emf->orbs
+1763595626132,hunter,45077,Van,orbs,11,3,MOVE,Hallway
+1763595626145,hunter,45077,Hallway,orbs,0,4,MOVE,Van
+1763595626147,hunter,45077,Van,orbs,1,4,MOVE,Hallway
+1763595626151,hunter,45077,Hallway,orbs,0,5,MOVE,Van
+1763595626180,hunter,45077,Van,orbs,1,5,MOVE,Hallway
+1763595626182,hunter,45077,Hallway,orbs,2,5,MOVE,Van
+1763595626225,hunter,45077,Van,orbs,3,5,MOVE,Hallway
+1763595626227,hunter,45077,Hallway,orbs,4,5,MOVE,Basement
+1763595626230,hunter,45077,Basement,orbs,5,5,MOVE,Basement Hallway
+1763595626232,hunter,45077,Basement Hallway,orbs,6,5,MOVE,Right Storage Room
+1763595626235,hunter,45077,Right Storage Room,orbs,7,5,MOVE,Basement Hallway
+1763595626237,hunter,45077,Basement Hallway,orbs,8,5,RETURN_START,start
+1763595626240,hunter,45077,Basement Hallway,orbs,8,5,MOVE,Right Storage Room
+1763595626243,hunter,45077,Right Storage Room,orbs,8,5,MOVE,Basement Hallway
+1763595626285,hunter,45077,Basement Hallway,orbs,8,5,MOVE,Basement
+1763595626300,hunter,45077,Basement,orbs,8,5,MOVE,Hallway
+1763595626303,hunter,45077,Hallway,orbs,8,5,MOVE,Van
+1763595626305,hunter,45077,Van,orbs,8,5,RETURN_COMPLETE,complete
+1763595626308,hunter,45077,,radio,8,5,SWAP,orbs->radio
+1763595626310,hunter,45077,Van,radio,9,5,MOVE,Hallway
+1763595626313,hunter,45077,Hallway,radio,10,5,MOVE,Bathroom
+1763595626318,hunter,45077,Bathroom,radio,11,5,MOVE,Hallway
+1763595626321,hunter,45077,Hallway,radio,12,5,RETURN_START,start
+1763595626324,hunter,45077,Hallway,radio,12,5,MOVE,Bathroom
+1763595626327,hunter,45077,Bathroom,radio,12,5,MOVE,Hallway
+1763595626329,hunter,45077,Hallway,radio,12,5,MOVE,Van
+1763595626333,hunter,45077,Van,radio,12,5,RETURN_COMPLETE,complete
+1763595626336,hunter,45077,Van,radio,12,5,EXIT,evidence
+1763595627936,hunter,45077,Van,emf,0,0,INIT,William
+1763595628000,hunter,45077,Van,emf,1,0,MOVE,Hallway
+1763595628003,hunter,45077,Hallway,emf,0,1,MOVE,Kitchen
+1763595628005,hunter,45077,Kitchen,emf,1,1,MOVE,Living Room
+1763595628009,hunter,45077,Living Room,emf,2,1,MOVE,Kitchen
+1763595628027,hunter,45077,Kitchen,emf,3,1,MOVE,Hallway
+1763595628029,hunter,45077,Hallway,emf,0,2,MOVE,Basement
+1763595628032,hunter,45077,Basement,emf,1,2,MOVE,Basement Hallway
+1763595628034,hunter,45077,Basement Hallway,emf,2,2,MOVE,Right Storage Room
+1763595628036,hunter,45077,Right Storage Room,emf,3,2,RETURN_START,start
+1763595628038,hunter,45077,Right Storage Room,emf,3,2,MOVE,Basement Hallway
+1763595628041,hunter,45077,Basement Hallway,emf,3,2,MOVE,Basement
+1763595628061,hunter,45077,Basement,emf,3,2,MOVE,Hallway
+1763595628063,hunter,45077,Hallway,emf,3,2,MOVE,Kitchen
+1763595628065,hunter,45077,Kitchen,emf,3,2,MOVE,Living Room
+1763595628069,hunter,45077,Living Room,emf,3,2,MOVE,Kitchen
+1763595628115,hunter,45077,Kitchen,emf,3,2,MOVE,Hallway
+1763595628118,hunter,45077,Hallway,emf,3,2,MOVE,Van
+1763595628121,hunter,45077,Van,emf,3,2,RETURN_COMPLETE,complete
+1763595628124,hunter,45077,,orbs,3,2,SWAP,emf->orbs
+1763595628132,hunter,45077,Van,orbs,4,2,MOVE,Hallway
+1763595628135,hunter,45077,Hallway,orbs,0,3,EVIDENCE,orbs
+1763595628138,hunter,45077,Hallway,orbs,0,3,RETURN_START,start
+1763595628155,hunter,45077,Hallway,orbs,0,3,MOVE,Van
+1763595628159,hunter,45077,Van,orbs,0,3,RETURN_COMPLETE,complete
+1763595628164,hunter,45077,Van,orbs,0,3,EXIT,evidence
+1763595628952,hunter,45077,Van,emf,0,0,INIT,William
+1763595628994,hunter,45077,Van,emf,1,0,MOVE,Hallway
+1763595628997,hunter,45077,Hallway,emf,2,0,MOVE,Bathroom
+1763595629019,hunter,45077,Bathroom,emf,3,0,MOVE,Hallway
+1763595629044,hunter,45077,Hallway,emf,4,0,MOVE,Basement
+1763595629047,hunter,45077,Basement,emf,5,0,MOVE,Hallway
+1763595629071,hunter,45077,Hallway,emf,0,1,MOVE,Kitchen
+1763595629080,hunter,45077,Kitchen,emf,1,1,MOVE,Garage
+1763595629084,hunter,45077,Garage,emf,2,1,MOVE,Utility Room
+1763595629087,hunter,45077,Utility Room,emf,3,1,MOVE,Garage
+1763595629117,hunter,45077,Garage,emf,4,1,MOVE,Kitchen
+1763595629120,hunter,45077,Kitchen,emf,5,1,MOVE,Garage
+1763595629123,hunter,45077,Garage,emf,6,1,MOVE,Kitchen
+1763595629127,hunter,45077,Kitchen,emf,7,1,MOVE,Garage
+1763595629129,hunter,45077,Garage,emf,8,1,MOVE,Kitchen
+1763595629132,hunter,45077,Kitchen,emf,9,1,MOVE,Garage
+1763595629135,hunter,45077,Garage,emf,10,1,MOVE,Kitchen
+1763595629137,hunter,45077,Kitchen,emf,11,1,MOVE,Garage
+1763595629139,hunter,45077,Garage,emf,12,1,MOVE,Kitchen
+1763595629145,hunter,45077,Kitchen,emf,13,1,MOVE,Hallway
+1763595629147,hunter,45077,Hallway,emf,0,2,MOVE,Bathroom
+1763595629150,hunter,45077,Bathroom,emf,1,2,RETURN_START,start
+1763595629155,hunter,45077,Bathroom,emf,1,2,MOVE,Hallway
+1763595629158,hunter,45077,Hallway,emf,1,2,MOVE,Kitchen
+1763595629164,hunter,45077,Kitchen,emf,1,2,MOVE,Garage
+1763595629168,hunter,45077,Garage,emf,1,2,MOVE,Kitchen
+1763595629171,hunter,45077,Kitchen,emf,1,2,MOVE,Garage
+1763595629174,hunter,45077,Garage,emf,1,2,MOVE,Kitchen
+1763595629177,hunter,45077,Kitchen,emf,1,2,MOVE,Garage
+1763595629180,hunter,45077,Garage,emf,1,2,MOVE,Kitchen
+1763595629184,hunter,45077,Kitchen,emf,1,2,MOVE,Garage
+1763595629187,hunter,45077,Garage,emf,1,2,MOVE,Kitchen
+1763595629192,hunter,45077,Kitchen,emf,1,2,MOVE,Garage
+1763595629194,hunter,45077,Garage,emf,1,2,MOVE,Utility Room
+1763595629198,hunter,45077,Utility Room,emf,1,2,MOVE,Garage
+1763595629201,hunter,45077,Garage,emf,1,2,MOVE,Kitchen
+1763595629208,hunter,45077,Kitchen,emf,1,2,MOVE,Hallway
+1763595629220,hunter,45077,Hallway,emf,1,2,MOVE,Basement
+1763595629223,hunter,45077,Basement,emf,1,2,MOVE,Hallway
+1763595629225,hunter,45077,Hallway,emf,1,2,MOVE,Bathroom
+1763595629229,hunter,45077,Bathroom,emf,1,2,MOVE,Hallway
+1763595629231,hunter,45077,Hallway,emf,1,2,MOVE,Van
+1763595629234,hunter,45077,Van,emf,1,2,RETURN_COMPLETE,complete
+1763595629239,hunter,45077,,orbs,1,2,SWAP,emf->orbs
+1763595629278,hunter,45077,Van,orbs,0,3,MOVE,Hallway
+1763595629281,hunter,45077,Hallway,orbs,0,4,EVIDENCE,orbs
+1763595629283,hunter,45077,Hallway,orbs,0,4,RETURN_START,start
+1763595629297,hunter,45077,Hallway,orbs,0,4,MOVE,Van
+1763595629300,hunter,45077,Van,orbs,0,4,RETURN_COMPLETE,complete
+1763595629303,hunter,45077,,radio,0,4,SWAP,orbs->radio
+1763595629311,hunter,45077,Van,radio,1,4,MOVE,Hallway
+1763595629313,hunter,45077,Hallway,radio,0,5,MOVE,Van
+1763595629316,hunter,45077,Van,radio,1,5,MOVE,Hallway
+1763595629347,hunter,45077,Hallway,radio,0,6,MOVE,Basement
+1763595629350,hunter,45077,Basement,radio,1,6,MOVE,Hallway
+1763595629353,hunter,45077,Hallway,radio,2,6,MOVE,Basement
+1763595629361,hunter,45077,Basement,radio,3,6,MOVE,Basement Hallway
+1763595629372,hunter,45077,Basement Hallway,radio,4,6,MOVE,Right Storage Room
+1763595629375,hunter,45077,Right Storage Room,radio,5,6,MOVE,Basement Hallway
+1763595629378,hunter,45077,Basement Hallway,radio,6,6,MOVE,Left Storage Room
+1763595629381,hunter,45077,Left Storage Room,radio,7,6,MOVE,Basement Hallway
+1763595629383,hunter,45077,Basement Hallway,radio,8,6,MOVE,Right Storage Room
+1763595629385,hunter,45077,Right Storage Room,radio,9,6,MOVE,Basement Hallway
+1763595629388,hunter,45077,Basement Hallway,radio,10,6,MOVE,Right Storage Room
+1763595629391,hunter,45077,Right Storage Room,radio,11,6,MOVE,Basement Hallway
+1763595629394,hunter,45077,Basement Hallway,radio,12,6,MOVE,Basement
+1763595629396,hunter,45077,Basement,radio,13,6,MOVE,Basement Hallway
+1763595629400,hunter,45077,Basement Hallway,radio,14,6,MOVE,Left Storage Room
+1763595629403,hunter,45077,Left Storage Room,radio,15,6,EXIT,bored
+1763595630144,hunter,45077,Van,emf,0,0,INIT,William
+1763595630232,hunter,45077,Van,emf,1,0,MOVE,Hallway
+1763595630236,hunter,45077,Hallway,emf,2,0,MOVE,Master Bedroom
+1763595630238,hunter,45077,Master Bedroom,emf,3,0,MOVE,Hallway
+1763595630241,hunter,45077,Hallway,emf,4,0,MOVE,Master Bedroom
+1763595630243,hunter,45077,Master Bedroom,emf,5,0,MOVE,Hallway
+1763595630245,hunter,45077,Hallway,emf,6,0,MOVE,Basement
+1763595630248,hunter,45077,Basement,emf,7,0,MOVE,Basement Hallway
+1763595630250,hunter,45077,Basement Hallway,emf,8,0,MOVE,Basement
+1763595630261,hunter,45077,Basement,emf,9,0,MOVE,Hallway
+1763595630282,hunter,45077,Hallway,emf,10,0,MOVE,Kitchen
+1763595630285,hunter,45077,Kitchen,emf,11,0,RETURN_START,start
+1763595630294,hunter,45077,Kitchen,emf,11,0,MOVE,Hallway
+1763595630337,hunter,45077,Hallway,emf,11,0,MOVE,Basement
+1763595630339,hunter,45077,Basement,emf,11,0,MOVE,Basement Hallway
+1763595630342,hunter,45077,Basement Hallway,emf,11,0,MOVE,Basement
+1763595630386,hunter,45077,Basement,emf,11,0,MOVE,Hallway
+1763595630404,hunter,45077,Hallway,emf,11,0,MOVE,Master Bedroom
+1763595630407,hunter,45077,Master Bedroom,emf,11,0,MOVE,Hallway
+1763595630433,hunter,45077,Hallway,emf,11,0,MOVE,Master Bedroom
+1763595630436,hunter,45077,Master Bedroom,emf,11,0,MOVE,Hallway
+1763595630439,hunter,45077,Hallway,emf,11,0,MOVE,Van
+1763595630442,hunter,45077,Van,emf,11,0,RETURN_COMPLETE,complete
+1763595630445,hunter,45077,,orbs,11,0,SWAP,emf->orbs
+1763595630452,hunter,45077,Van,orbs,12,0,MOVE,Hallway
+1763595630454,hunter,45077,Hallway,orbs,0,1,EVIDENCE,orbs
+1763595630458,hunter,45077,Hallway,orbs,0,1,RETURN_START,start
+1763595630531,hunter,45077,Hallway,orbs,0,1,MOVE,Van
+1763595630534,hunter,45077,Van,orbs,0,1,RETURN_COMPLETE,complete
+1763595630537,hunter,45077,,radio,0,1,SWAP,orbs->radio
+1763595630567,hunter,45077,Van,radio,1,1,MOVE,Hallway
+1763595630572,hunter,45077,Hallway,radio,0,2,MOVE,Bathroom
+1763595630575,hunter,45077,Bathroom,radio,1,2,MOVE,Hallway
+1763595630616,hunter,45077,Hallway,radio,0,3,MOVE,Basement
+1763595630619,hunter,45077,Basement,radio,1,3,MOVE,Basement Hallway
+1763595630634,hunter,45077,Basement Hallway,radio,2,3,MOVE,Basement
+1763595630642,hunter,45077,Basement,radio,3,3,MOVE,Hallway
+1763595630644,hunter,45077,Hallway,radio,0,4,MOVE,Boy's Bedroom
+1763595630647,hunter,45077,Boy's Bedroom,radio,1,4,MOVE,Hallway
+1763595630652,hunter,45077,Hallway,radio,0,5,MOVE,Master Bedroom
+1763595630655,hunter,45077,Master Bedroom,radio,1,5,MOVE,Hallway
+1763595630658,hunter,45077,Hallway,radio,0,6,MOVE,Van
+1763595630660,hunter,45077,Van,radio,1,6,MOVE,Hallway
+1763595630663,hunter,45077,Hallway,radio,0,7,MOVE,Kitchen
+1763595630665,hunter,45077,Kitchen,radio,1,7,MOVE,Hallway
+1763595630668,hunter,45077,Hallway,radio,0,8,MOVE,Boy's Bedroom
+1763595630674,hunter,45077,Boy's Bedroom,radio,1,8,MOVE,Hallway
+1763595630679,hunter,45077,Hallway,radio,0,9,MOVE,Bathroom
+1763595630681,hunter,45077,Bathroom,radio,1,9,RETURN_START,start
+1763595630690,hunter,45077,Bathroom,radio,1,9,MOVE,Hallway
+1763595630692,hunter,45077,Hallway,radio,1,9,MOVE,Boy's Bedroom
+1763595630697,hunter,45077,Boy's Bedroom,radio,1,9,MOVE,Hallway
+1763595630699,hunter,45077,Hallway,radio,1,9,MOVE,Kitchen
+1763595630710,hunter,45077,Kitchen,radio,1,9,MOVE,Hallway
+1763595630713,hunter,45077,Hallway,radio,1,9,MOVE,Van
+1763595630716,hunter,45077,Van,radio,1,9,RETURN_COMPLETE,complete
+1763595630719,hunter,45077,Van,radio,1,9,EXIT,evidence
+1763595631389,hunter,45077,Van,emf,0,0,INIT,William
+1763595631414,hunter,45077,Van,emf,1,0,MOVE,Hallway
+1763595631441,hunter,45077,Hallway,emf,2,0,MOVE,Bathroom
+1763595631444,hunter,45077,Bathroom,emf,3,0,RETURN_START,start
+1763595631453,hunter,45077,Bathroom,emf,3,0,MOVE,Hallway
+1763595631457,hunter,45077,Hallway,emf,3,0,MOVE,Van
+1763595631460,hunter,45077,Van,emf,3,0,RETURN_COMPLETE,complete
+1763595631463,hunter,45077,,orbs,3,0,SWAP,emf->orbs
+1763595631467,hunter,45077,Van,orbs,4,0,MOVE,Hallway
+1763595631470,hunter,45077,Hallway,orbs,0,1,MOVE,Kitchen
+1763595631472,hunter,45077,Kitchen,orbs,1,1,MOVE,Living Room
+1763595631475,hunter,45077,Living Room,orbs,2,1,MOVE,Kitchen
+1763595631481,hunter,45077,Kitchen,orbs,3,1,MOVE,Garage
+1763595631483,hunter,45077,Garage,orbs,4,1,RETURN_START,start
+1763595631486,hunter,45077,Garage,orbs,4,1,MOVE,Kitchen
+1763595631489,hunter,45077,Kitchen,orbs,4,1,MOVE,Living Room
+1763595631492,hunter,45077,Living Room,orbs,4,1,MOVE,Kitchen
+1763595631496,hunter,45077,Kitchen,orbs,4,1,MOVE,Hallway
+1763595631499,hunter,45077,Hallway,orbs,4,1,MOVE,Van
+1763595631501,hunter,45077,Van,orbs,4,1,RETURN_COMPLETE,complete
+1763595631503,hunter,45077,,radio,4,1,SWAP,orbs->radio
+1763595631512,hunter,45077,Van,radio,5,1,MOVE,Hallway
+1763595631515,hunter,45077,Hallway,radio,0,2,MOVE,Bathroom
+1763595631523,hunter,45077,Bathroom,radio,1,2,MOVE,Hallway
+1763595631616,hunter,45077,Hallway,radio,0,3,MOVE,Basement
+1763595631635,hunter,45077,Basement,radio,1,3,MOVE,Hallway
+1763595631645,hunter,45077,Hallway,radio,0,4,MOVE,Van
+1763595631648,hunter,45077,Van,radio,1,4,MOVE,Hallway
+1763595631650,hunter,45077,Hallway,radio,0,5,MOVE,Bathroom
+1763595631681,hunter,45077,Bathroom,radio,1,5,MOVE,Hallway
+1763595631684,hunter,45077,Hallway,radio,0,6,MOVE,Van
+1763595631686,hunter,45077,Van,radio,1,6,MOVE,Hallway
+1763595631688,hunter,45077,Hallway,radio,0,7,RETURN_START,start
+1763595631730,hunter,45077,Hallway,radio,0,7,MOVE,Van
+1763595631733,hunter,45077,Van,radio,0,7,RETURN_COMPLETE,complete
+1763595631736,hunter,45077,,temp,0,7,SWAP,radio->temp
+1763595631758,hunter,45077,Van,temp,1,7,MOVE,Hallway
+1763595631760,hunter,45077,Hallway,temp,0,8,EVIDENCE,temp
+1763595631763,hunter,45077,Hallway,temp,0,8,RETURN_START,start
+1763595631812,hunter,45077,Hallway,temp,0,8,MOVE,Van
+1763595631815,hunter,45077,Van,temp,0,8,RETURN_COMPLETE,complete
+1763595631817,hunter,45077,Van,temp,0,8,EXIT,evidence
+1763595632511,hunter,45077,Van,emf,0,0,INIT,William
+1763595632564,hunter,45077,Van,emf,1,0,MOVE,Hallway
+1763595632569,hunter,45077,Hallway,emf,0,1,MOVE,Kitchen
+1763595632571,hunter,45077,Kitchen,emf,1,1,MOVE,Garage
+1763595632574,hunter,45077,Garage,emf,2,1,MOVE,Kitchen
+1763595632578,hunter,45077,Kitchen,emf,3,1,MOVE,Living Room
+1763595632581,hunter,45077,Living Room,emf,4,1,MOVE,Kitchen
+1763595632584,hunter,45077,Kitchen,emf,5,1,RETURN_START,start
+1763595632586,hunter,45077,Kitchen,emf,5,1,MOVE,Living Room
+1763595632590,hunter,45077,Living Room,emf,5,1,MOVE,Kitchen
+1763595632592,hunter,45077,Kitchen,emf,5,1,MOVE,Garage
+1763595632595,hunter,45077,Garage,emf,5,1,MOVE,Kitchen
+1763595632607,hunter,45077,Kitchen,emf,5,1,MOVE,Hallway
+1763595632651,hunter,45077,Hallway,emf,5,1,MOVE,Van
+1763595632654,hunter,45077,Van,emf,5,1,RETURN_COMPLETE,complete
+1763595632656,hunter,45077,,orbs,5,1,SWAP,emf->orbs
+1763595632671,hunter,45077,Van,orbs,6,1,MOVE,Hallway
+1763595632674,hunter,45077,Hallway,orbs,0,2,EVIDENCE,orbs
+1763595632676,hunter,45077,Hallway,orbs,0,2,RETURN_START,start
+1763595632679,hunter,45077,Hallway,orbs,0,2,MOVE,Van
+1763595632682,hunter,45077,Van,orbs,0,2,RETURN_COMPLETE,complete
+1763595632685,hunter,45077,,radio,0,2,SWAP,orbs->radio
+1763595632722,hunter,45077,Van,radio,1,2,MOVE,Hallway
+1763595632724,hunter,45077,Hallway,radio,2,2,MOVE,Basement
+1763595632728,hunter,45077,Basement,radio,3,2,MOVE,Hallway
+1763595632747,hunter,45077,Hallway,radio,4,2,MOVE,Master Bedroom
+1763595632759,hunter,45077,Master Bedroom,radio,5,2,MOVE,Hallway
+1763595632762,hunter,45077,Hallway,radio,0,3,MOVE,Van
+1763595632765,hunter,45077,Van,radio,1,3,MOVE,Hallway
+1763595632768,hunter,45077,Hallway,radio,0,4,MOVE,Basement
+1763595632771,hunter,45077,Basement,radio,1,4,MOVE,Basement Hallway
+1763595632773,hunter,45077,Basement Hallway,radio,2,4,MOVE,Right Storage Room
+1763595632776,hunter,45077,Right Storage Room,radio,3,4,RETURN_START,start
+1763595632779,hunter,45077,Right Storage Room,radio,3,4,MOVE,Basement Hallway
+1763595632782,hunter,45077,Basement Hallway,radio,3,4,MOVE,Basement
+1763595632815,hunter,45077,Basement,radio,3,4,MOVE,Hallway
+1763595632817,hunter,45077,Hallway,radio,3,4,MOVE,Van
+1763595632820,hunter,45077,Van,radio,3,4,RETURN_COMPLETE,complete
+1763595632823,hunter,45077,,temp,3,4,SWAP,radio->temp
+1763595632833,hunter,45077,Van,temp,4,4,MOVE,Hallway
+1763595632846,hunter,45077,Hallway,temp,5,4,MOVE,Bathroom
+1763595632849,hunter,45077,Bathroom,temp,6,4,MOVE,Hallway
+1763595632862,hunter,45077,Hallway,temp,0,5,MOVE,Bathroom
+1763595632864,hunter,45077,Bathroom,temp,1,5,MOVE,Hallway
+1763595632867,hunter,45077,Hallway,temp,0,6,MOVE,Van
+1763595632885,hunter,45077,Van,temp,1,6,MOVE,Hallway
+1763595632887,hunter,45077,Hallway,temp,2,6,MOVE,Bathroom
+1763595632890,hunter,45077,Bathroom,temp,0,7,MOVE,Hallway
+1763595632892,hunter,45077,Hallway,temp,0,8,MOVE,Master Bedroom
+1763595632895,hunter,45077,Master Bedroom,temp,1,8,MOVE,Hallway
+1763595632901,hunter,45077,Hallway,temp,2,8,RETURN_START,start
+1763595632909,hunter,45077,Hallway,temp,2,8,MOVE,Master Bedroom
+1763595632912,hunter,45077,Master Bedroom,temp,2,8,MOVE,Hallway
+1763595632915,hunter,45077,Hallway,temp,2,8,MOVE,Bathroom
+1763595632919,hunter,45077,Bathroom,temp,2,8,MOVE,Hallway
+1763595632948,hunter,45077,Hallway,temp,2,8,MOVE,Van
+1763595632951,hunter,45077,Van,temp,2,8,RETURN_COMPLETE,complete
+1763595632953,hunter,45077,,prints,2,8,SWAP,temp->prints
+1763595632961,hunter,45077,Van,prints,3,8,MOVE,Hallway
+1763595632963,hunter,45077,Hallway,prints,0,9,EVIDENCE,prints
+1763595632966,hunter,45077,Hallway,prints,0,9,RETURN_START,start
+1763595632982,hunter,45077,Hallway,prints,0,9,MOVE,Van
+1763595632985,hunter,45077,Van,prints,0,9,RETURN_COMPLETE,complete
+1763595632988,hunter,45077,,writing,0,9,SWAP,prints->writing
+1763595633011,hunter,45077,Van,writing,1,9,MOVE,Hallway
+1763595633019,hunter,45077,Hallway,writing,0,10,MOVE,Basement
+1763595633022,hunter,45077,Basement,writing,1,10,MOVE,Basement Hallway
+1763595633024,hunter,45077,Basement Hallway,writing,2,10,MOVE,Basement
+1763595633027,hunter,45077,Basement,writing,3,10,MOVE,Hallway
+1763595633030,hunter,45077,Hallway,writing,0,11,MOVE,Boy's Bedroom
+1763595633032,hunter,45077,Boy's Bedroom,writing,1,11,MOVE,Hallway
+1763595633035,hunter,45077,Hallway,writing,0,12,RETURN_START,start
+1763595633048,hunter,45077,Hallway,writing,0,12,MOVE,Boy's Bedroom
+1763595633051,hunter,45077,Boy's Bedroom,writing,0,12,MOVE,Hallway
+1763595633053,hunter,45077,Hallway,writing,0,12,MOVE,Basement
+1763595633057,hunter,45077,Basement,writing,0,12,MOVE,Basement Hallway
+1763595633061,hunter,45077,Basement Hallway,writing,0,12,MOVE,Basement
+1763595633063,hunter,45077,Basement,writing,0,12,MOVE,Hallway
+1763595633065,hunter,45077,Hallway,writing,0,12,MOVE,Van
+1763595633068,hunter,45077,Van,writing,0,12,RETURN_COMPLETE,complete
+1763595633071,hunter,45077,,infrared,0,12,SWAP,writing->infrared
+1763595633073,hunter,45077,Van,infrared,1,12,MOVE,Hallway
+1763595633076,hunter,45077,Hallway,infrared,0,13,EVIDENCE,infrared
+1763595633078,hunter,45077,Hallway,infrared,0,13,RETURN_START,start
+1763595633081,hunter,45077,Hallway,infrared,0,13,MOVE,Van
+1763595633085,hunter,45077,Van,infrared,0,13,RETURN_COMPLETE,complete
+1763595633087,hunter,45077,Van,infrared,0,13,EXIT,evidence
+1763595672477,hunter,45077,Van,emf,0,0,INIT,William
+1763595672507,hunter,45077,Van,emf,1,0,MOVE,Hallway
+1763595672549,hunter,45077,Hallway,emf,2,0,MOVE,Master Bedroom
+1763595672553,hunter,45077,Master Bedroom,emf,3,0,MOVE,Hallway
+1763595672564,hunter,45077,Hallway,emf,0,1,MOVE,Kitchen
+1763595672566,hunter,45077,Kitchen,emf,1,1,MOVE,Living Room
+1763595672569,hunter,45077,Living Room,emf,2,1,MOVE,Kitchen
+1763595672575,hunter,45077,Kitchen,emf,3,1,MOVE,Hallway
+1763595672578,hunter,45077,Hallway,emf,0,2,MOVE,Master Bedroom
+1763595672580,hunter,45077,Master Bedroom,emf,1,2,MOVE,Hallway
+1763595672582,hunter,45077,Hallway,emf,0,3,RETURN_START,start
+1763595672588,hunter,45077,Hallway,emf,0,3,MOVE,Master Bedroom
+1763595672590,hunter,45077,Master Bedroom,emf,0,3,MOVE,Hallway
+1763595672596,hunter,45077,Hallway,emf,0,3,MOVE,Kitchen
+1763595672599,hunter,45077,Kitchen,emf,0,3,MOVE,Living Room
+1763595672601,hunter,45077,Living Room,emf,0,3,MOVE,Kitchen
+1763595672619,hunter,45077,Kitchen,emf,0,3,MOVE,Hallway
+1763595672622,hunter,45077,Hallway,emf,0,3,MOVE,Master Bedroom
+1763595672624,hunter,45077,Master Bedroom,emf,0,3,MOVE,Hallway
+1763595672627,hunter,45077,Hallway,emf,0,3,MOVE,Van
+1763595672630,hunter,45077,Van,emf,0,3,RETURN_COMPLETE,complete
+1763595672632,hunter,45077,,orbs,0,3,SWAP,emf->orbs
+1763595672635,hunter,45077,Van,orbs,1,3,MOVE,Hallway
+1763595672700,hunter,45077,Hallway,orbs,2,3,MOVE,Basement
+1763595672702,hunter,45077,Basement,orbs,3,3,MOVE,Basement Hallway
+1763595672705,hunter,45077,Basement Hallway,orbs,4,3,MOVE,Basement
+1763595672717,hunter,45077,Basement,orbs,5,3,MOVE,Basement Hallway
+1763595672720,hunter,45077,Basement Hallway,orbs,6,3,MOVE,Left Storage Room
+1763595672723,hunter,45077,Left Storage Room,orbs,7,3,MOVE,Basement Hallway
+1763595672726,hunter,45077,Basement Hallway,orbs,8,3,MOVE,Basement
+1763595672760,hunter,45077,Basement,orbs,9,3,MOVE,Hallway
+1763595672772,hunter,45077,Hallway,orbs,10,3,MOVE,Bathroom
+1763595672774,hunter,45077,Bathroom,orbs,11,3,MOVE,Hallway
+1763595672802,hunter,45077,Hallway,orbs,0,4,MOVE,Kitchen
+1763595672805,hunter,45077,Kitchen,orbs,1,4,MOVE,Living Room
+1763595672808,hunter,45077,Living Room,orbs,2,4,MOVE,Kitchen
+1763595672811,hunter,45077,Kitchen,orbs,3,4,MOVE,Garage
+1763595672814,hunter,45077,Garage,orbs,4,4,MOVE,Kitchen
+1763595672842,hunter,45077,Kitchen,orbs,5,4,MOVE,Hallway
+1763595672849,hunter,45077,Hallway,orbs,6,4,MOVE,Van
+1763595672852,hunter,45077,Van,orbs,7,4,MOVE,Hallway
+1763595672855,hunter,45077,Hallway,orbs,0,5,MOVE,Kitchen
+1763595672858,hunter,45077,Kitchen,orbs,1,5,MOVE,Hallway
+1763595672860,hunter,45077,Hallway,orbs,0,6,RETURN_START,start
+1763595672869,hunter,45077,Hallway,orbs,0,6,MOVE,Kitchen
+1763595672871,hunter,45077,Kitchen,orbs,0,6,MOVE,Hallway
+1763595672874,hunter,45077,Hallway,orbs,0,6,MOVE,Van
+1763595672877,hunter,45077,Van,orbs,0,6,RETURN_COMPLETE,complete
+1763595672880,hunter,45077,,radio,0,6,SWAP,orbs->radio
+1763595672884,hunter,45077,Van,radio,1,6,MOVE,Hallway
+1763595672886,hunter,45077,Hallway,radio,2,6,EVIDENCE,radio
+1763595672889,hunter,45077,Hallway,radio,2,6,RETURN_START,start
+1763595672892,hunter,45077,Hallway,radio,2,6,MOVE,Van
+1763595672895,hunter,45077,Van,radio,2,6,RETURN_COMPLETE,complete
+1763595672897,hunter,45077,,temp,2,6,SWAP,radio->temp
+1763595672904,hunter,45077,Van,temp,3,6,MOVE,Hallway
+1763595672906,hunter,45077,Hallway,temp,0,7,MOVE,Boy's Bedroom
+1763595672909,hunter,45077,Boy's Bedroom,temp,1,7,MOVE,Hallway
+1763595672922,hunter,45077,Hallway,temp,0,8,MOVE,Boy's Bedroom
+1763595672925,hunter,45077,Boy's Bedroom,temp,1,8,MOVE,Hallway
+1763595672928,hunter,45077,Hallway,temp,0,9,RETURN_START,start
+1763595672956,hunter,45077,Hallway,temp,0,9,MOVE,Boy's Bedroom
+1763595672959,hunter,45077,Boy's Bedroom,temp,0,9,MOVE,Hallway
+1763595672962,hunter,45077,Hallway,temp,0,9,MOVE,Boy's Bedroom
+1763595672964,hunter,45077,Boy's Bedroom,temp,0,9,MOVE,Hallway
+1763595672967,hunter,45077,Hallway,temp,0,9,MOVE,Van
+1763595672971,hunter,45077,Van,temp,0,9,RETURN_COMPLETE,complete
+1763595672973,hunter,45077,Van,temp,0,9,EXIT,evidence
+1763595673819,hunter,45077,Van,emf,0,0,INIT,William
+1763595673837,hunter,45077,Van,emf,1,0,MOVE,Hallway
+1763595673840,hunter,45077,Hallway,emf,0,1,MOVE,Kitchen
+1763595673842,hunter,45077,Kitchen,emf,1,1,MOVE,Hallway
+1763595673845,hunter,45077,Hallway,emf,0,2,MOVE,Van
+1763595673847,hunter,45077,Van,emf,1,2,MOVE,Hallway
+1763595673850,hunter,45077,Hallway,emf,0,3,MOVE,Van
+1763595673853,hunter,45077,Van,emf,1,3,MOVE,Hallway
+1763595673855,hunter,45077,Hallway,emf,0,4,MOVE,Boy's Bedroom
+1763595673860,hunter,45077,Boy's Bedroom,emf,1,4,MOVE,Hallway
+1763595673863,hunter,45077,Hallway,emf,0,5,MOVE,Boy's Bedroom
+1763595673905,hunter,45077,Boy's Bedroom,emf,1,5,MOVE,Hallway
+1763595673907,hunter,45077,Hallway,emf,0,6,MOVE,Boy's Bedroom
+1763595673909,hunter,45077,Boy's Bedroom,emf,1,6,MOVE,Hallway
+1763595673912,hunter,45077,Hallway,emf,0,7,MOVE,Kitchen
+1763595673915,hunter,45077,Kitchen,emf,1,7,MOVE,Living Room
+1763595673917,hunter,45077,Living Room,emf,2,7,MOVE,Kitchen
+1763595673922,hunter,45077,Kitchen,emf,3,7,MOVE,Living Room
+1763595673925,hunter,45077,Living Room,emf,4,7,MOVE,Kitchen
+1763595673955,hunter,45077,Kitchen,emf,5,7,MOVE,Hallway
+1763595673963,hunter,45077,Hallway,emf,0,8,MOVE,Basement
+1763595673966,hunter,45077,Basement,emf,1,8,MOVE,Basement Hallway
+1763595673973,hunter,45077,Basement Hallway,emf,2,8,MOVE,Right Storage Room
+1763595673976,hunter,45077,Right Storage Room,emf,3,8,MOVE,Basement Hallway
+1763595673979,hunter,45077,Basement Hallway,emf,4,8,MOVE,Right Storage Room
+1763595673982,hunter,45077,Right Storage Room,emf,5,8,MOVE,Basement Hallway
+1763595673987,hunter,45077,Basement Hallway,emf,6,8,MOVE,Basement
+1763595673990,hunter,45077,Basement,emf,7,8,MOVE,Basement Hallway
+1763595673995,hunter,45077,Basement Hallway,emf,8,8,MOVE,Right Storage Room
+1763595673998,hunter,45077,Right Storage Room,emf,9,8,MOVE,Basement Hallway
+1763595674000,hunter,45077,Basement Hallway,emf,10,8,MOVE,Right Storage Room
+1763595674009,hunter,45077,Right Storage Room,emf,11,8,MOVE,Basement Hallway
+1763595674011,hunter,45077,Basement Hallway,emf,12,8,MOVE,Right Storage Room
+1763595674014,hunter,45077,Right Storage Room,emf,13,8,MOVE,Basement Hallway
+1763595674020,hunter,45077,Basement Hallway,emf,14,8,MOVE,Basement
+1763595674022,hunter,45077,Basement,emf,15,8,EXIT,bored

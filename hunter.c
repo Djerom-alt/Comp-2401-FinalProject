@@ -7,6 +7,7 @@
 // function to add hunters
 void insert_hunters(struct House* house) {
 
+    // hunter information
     char hunter_name[MAX_HUNTER_NAME];
     int hunter_id;
 
@@ -77,10 +78,31 @@ void insert_hunters(struct House* house) {
         (*array)[house->hunter_collection.size].return_to_exit=false;
         (*array)[house->hunter_collection.size].has_exited=false;
 
-        // randomly pick a device
-        const enum EvidenceType* list;
-        int index=rand_int_threadsafe(0, get_all_evidence_types(&list));
-        (*array)[house->hunter_collection.size].device=list[index];
+
+
+        // RANDOM DEVICE SELECTION
+
+
+        // old way
+        // // randomly pick a device
+        // const enum EvidenceType* list;
+        // int index=rand_int_threadsafe(0, get_all_evidence_types(&list));
+        // (*array)[house->hunter_collection.size].device=list[index];
+        // old way
+
+        // hunter->device collection needs to be malloc'ed
+        (*array)[house->hunter_collection.size].device_collection.size=0;
+        get_all_evidence_types(&((*array)[house->hunter_collection.size].device_collection.devices));
+
+        // then select the size=0 device to start with
+        (*array)[house->hunter_collection.size].device=(*array)[house->hunter_collection.size].device_collection.devices[0];
+        // increase size
+        (*array)[house->hunter_collection.size].device_collection.size++;
+
+
+
+        // RANDOM DEVICE SELECTION
+
         
         // setup the roomstack
         // RoomNode head would be the starting location
@@ -93,7 +115,12 @@ void insert_hunters(struct House* house) {
         (*array)[house->hunter_collection.size].path.head=node;
 
         //log this insertion
-        log_hunter_init((*array)[house->hunter_collection.size].id, house->starting_room->name, hunter_name, list[index]);
+        log_hunter_init(
+            (*array)[house->hunter_collection.size].id,
+            house->starting_room->name, 
+            hunter_name, 
+            (*array)[house->hunter_collection.size].device
+        );
 
         // increase size
         house->hunter_collection.size++;
@@ -206,18 +233,40 @@ void hunter_turn(struct Hunter* hunter) {
             return;
         }
 
-        // swap and randomly pick a device, this is not currently smart since we can pick the same device again
-        const enum EvidenceType* list;
-        int index=rand_int_threadsafe(0, get_all_evidence_types(&list));
+        // HERE IS THE DEVICE SWAP
+
+        
+
+        // // swap and randomly pick a device, this is not currently smart since we can pick the same device again
+        // const enum EvidenceType* list;
+        // int index=rand_int_threadsafe(0, get_all_evidence_types(&list));
+
+        // // log swap device
+        // log_swap(hunter->id, hunter->boredom, hunter->fear, hunter->device, list[index]);
+
+        // // swap the devices
+        // hunter->device=list[index];
+
+        enum EvidenceType oldDevice=hunter->device;
+
+        // look into hunter device_collection
+        // MAX_EVIDENCE_TYPES
+        // check size first, if false then reset it to 0
+        if(MAX_EVIDENCE_TYPES <= hunter->device_collection.size){
+            hunter->device_collection.size=0;
+        }
+
+        // pick the next device
+        hunter->device = hunter->device_collection.devices[hunter->device_collection.size++];
 
         // log swap device
-        log_swap(hunter->id, hunter->boredom, hunter->fear, hunter->device, list[index]);
+        log_swap(hunter->id, hunter->boredom, hunter->fear, oldDevice, hunter->device);
 
-        // swap the devices
-        hunter->device=list[index];
+
+        // HERE IS THE DEVICE SWAP
+
         // we can turn off the return to the exit flag
         hunter->return_to_exit=false;
-
         return;
     }
 
@@ -302,8 +351,8 @@ void hunter_turn(struct Hunter* hunter) {
         }else{
             // if no evidence found, continue moving to the next room
             // small chance that hunter will return ot eh van to change equipment
-            int k=rand_int_threadsafe(0, 6);
-            int b=rand_int_threadsafe(0, 6);
+            int k=rand_int_threadsafe(0, 12);
+            int b=rand_int_threadsafe(0, 12);
             // if k and b matches then return to exit room to change, small chance to return to exit
             if(k==b){
                 hunter->return_to_exit=true;
