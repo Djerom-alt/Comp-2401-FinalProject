@@ -97,7 +97,7 @@ void ghost_turn(struct Ghost* ghost) {
         // }
 
         // much better for tweaking
-        if(r <= 10){
+        if(r <= 18){
             idle_or_haunt(ghost);
         }else{
             ghost_move(ghost);
