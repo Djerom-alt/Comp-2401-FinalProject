@@ -28,4 +28,7 @@ void clean_memory(struct House* house);
 // this function cleans the hunter breadstack
 void clean_stack(struct Hunter* hunter);
 
+// bfs_search function to find a path for the hunter
+void bfs_search(struct Hunter* hunter, struct RoomStack* stack);
+
 #endif // HUNTER_H

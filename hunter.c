@@ -67,8 +67,6 @@ void insert_hunters(struct House* house) {
         (*array)[house->hunter_collection.size].case_file=&(house->case_file);
         // point hunter to the starting location, first room in house
         (*array)[house->hunter_collection.size].current_room=house->starting_room;
-
-
         
         // set boredom to 0
         (*array)[house->hunter_collection.size].boredom=0;
@@ -78,6 +76,8 @@ void insert_hunters(struct House* house) {
         (*array)[house->hunter_collection.size].return_to_exit=false;
         (*array)[house->hunter_collection.size].has_exited=false;
 
+        // set starting room pointer
+        (*array)[house->hunter_collection.size].starting_room=house->starting_room;
 
 
         // RANDOM DEVICE SELECTION
@@ -104,15 +104,23 @@ void insert_hunters(struct House* house) {
         // RANDOM DEVICE SELECTION
 
         
-        // setup the roomstack
-        // RoomNode head would be the starting location
-        struct RoomNode* node=(struct RoomNode*)malloc(sizeof(struct RoomNode));
+        // only setup breadcrumb stack if pathfinding isn't active
+        if(!PATH_FINDING){
+            // setup the roomstack
+            // RoomNode head would be the starting location
+            struct RoomNode* node=(struct RoomNode*)malloc(sizeof(struct RoomNode));
 
-        node->room=house->starting_room;
-        node->prev=NULL;
+            node->room=house->starting_room;
+            node->prev=NULL;
 
-        // attach to the head
-        (*array)[house->hunter_collection.size].path.head=node;
+            // attach to the head
+            (*array)[house->hunter_collection.size].path.head=node;
+    
+        }else{
+            // init with NULL
+            (*array)[house->hunter_collection.size].path.head=NULL;
+        }
+
 
         //log this insertion
         log_hunter_init(
@@ -166,6 +174,136 @@ void clean_stack(struct Hunter* hunter){
     return;
 }
 
+// bfs_search function to find a path for the hunter
+void bfs_search(struct Hunter* hunter, struct RoomStack* stack) {
+
+    // target room
+    struct Room* start=hunter->current_room;
+    // need a way to start a starting room
+    struct Room* target=hunter->starting_room;
+
+    // linked list of RoomStacks ?
+    struct PathList path;
+
+    // allocate twice memory per RoomItem and RoomNode
+    path.head=(struct RoomItem *)malloc(sizeof(struct RoomItem));
+    // sets its states
+    path.head->node=(struct RoomNode *)malloc(sizeof(struct RoomNode));
+    path.head->next=NULL;
+    // setup the states of RoomNode
+    path.head->node->room=start;
+    path.head->node->prev=NULL;
+
+    // setup the tail, 
+    // for now point to head
+    path.tail=path.head;
+
+    // this one is used to track all RoomItem removed from head
+    struct RoomItem* ref=NULL;
+
+    // it is gurantted we will find the target, so we can run until we find it
+    while(true) {
+
+        // check if we have reached the target
+        if(path.head->node->room==target){
+            // stack->head=path.head->node;
+            // exit out of loop
+            break;
+        }
+
+        // continue 
+        // go through all adjacent rooms 
+        for(int i =0;i<path.head->node->room->connection_count;i++) {
+
+            // before adding, check the name of this room with the current room, so we don't loop unnecessarily
+            if(strcmp(path.head->node->room->name, path.head->node->room->adjacent_rooms[i]->name)!=0){
+                // allocate memory for RoomItem and RoomNode
+                struct RoomNode* new_node=(struct RoomNode *)malloc(sizeof(struct RoomNode));
+                // set the states of RoomNode
+                new_node->room=path.head->node->room->adjacent_rooms[i];
+                // point the prev to the RoomNode of the head 
+                new_node->prev=path.head->node;
+
+                // allocate memory for RoomItem
+                struct RoomItem* new_item=(struct RoomItem *)malloc(sizeof(struct RoomItem));
+                new_item->node=new_node;
+                new_item->next=NULL;
+
+                // make this the tail
+                path.tail->next=new_item;
+                path.tail=new_item;
+            }
+
+        }
+
+        // pop the head and replace with next
+        // before popping, free memory
+        // struct RoomItem* temp=path.head->next;
+        // free(path.head);
+        // // replace it
+        // path.head=temp;
+
+        // instead of free-ing memory here
+        struct RoomItem* temp=path.head;
+        // save to a memory reference
+        path.head=path.head->next;
+        // point the head to the ref
+        temp->next=ref;
+        // this head becomes the new start of the ref (nothing special)
+        ref=temp;
+        
+    }
+
+
+    // then we need to make brand new 
+    // path.head->node is the path found, node would the van -> target
+    struct RoomNode* stack_generated=NULL;
+    // reference to the nodes found needs to kept
+    struct RoomNode* current_room=path.head->node;
+
+    // through the loop to copy over room reference
+    while(current_room != NULL){
+        // alloc new memory
+        struct RoomNode* new_node=(struct RoomNode*)malloc(sizeof(struct RoomNode));
+        // copy over room
+        new_node->room=current_room->room;
+        // attach old to the new node
+        new_node->prev=stack_generated;
+        // new node becomes the head of the new stack
+        stack_generated=new_node;
+
+        // go to the next room
+        current_room=current_room->prev;
+    }
+    // attach the new stack to the stack passed over
+    stack->head=stack_generated;
+
+
+
+    // need to call a function, for now put it here
+    // attach the ref to the tail of Path list
+    path.tail->next=ref;
+    path.tail=ref;
+    
+    // now we can start free-ing memory of both RoomItems and RoomNodes
+    while(path.head != NULL){
+        // make a temp copy
+        struct RoomItem* temp=path.head->next;
+        // check if path.head->node is empty or not
+        if(path.head->node != NULL){
+            free(path.head->node);
+            path.head->node=NULL;
+        }
+        // free the roomItem
+        free(path.head);
+        // then make the next roomitem the head
+        path.head=temp;
+    }
+
+
+    return;
+}
+
 // function that simulates 1 hunter turn
 void hunter_turn(struct Hunter* hunter) {
 
@@ -192,12 +330,14 @@ void hunter_turn(struct Hunter* hunter) {
         // function to clean and clea breadcrumpstack
         clean_stack(hunter);
 
-        // wise to add back the starting room
-        struct RoomNode* node=(struct RoomNode*)malloc(sizeof(struct RoomNode));
-        node->prev=NULL;
-        node->room=hunter->current_room;
-        hunter->path.head=node;
-
+        // only add to the stack if pathfinding isn't active
+        if(!PATH_FINDING){
+            // wise to add back the starting room
+            struct RoomNode* node=(struct RoomNode*)malloc(sizeof(struct RoomNode));
+            node->prev=NULL;
+            node->room=hunter->current_room;
+            hunter->path.head=node;
+        }
 
         // check if hunter has enough evidence
         // all we have to do is type cast collected evidencebyte into a ghostype
@@ -336,6 +476,17 @@ void hunter_turn(struct Hunter* hunter) {
         unsigned char evidence_f=(hunter->device & hunter->current_room->evidence);
         // check if greater than 0
         if(evidence_f > 0){
+
+            // RETURN TO EXIT
+
+            // check the definition if path finding it turned on
+            if(PATH_FINDING){
+                // updates the breadcrumb stack
+                // then bfs search
+                bfs_search(hunter, &(hunter->path));
+            }
+
+
             // evidence found
             // clear appropriate evidence bit in the room's evidence byte
             // invert device
@@ -344,6 +495,10 @@ void hunter_turn(struct Hunter* hunter) {
             hunter->case_file->collected|=hunter->device;
             // set return to exit room
             hunter->return_to_exit=true;
+
+
+            // RETURN TO EXIT
+
             //log evidence
             log_evidence(hunter->id, hunter->boredom, hunter->fear, hunter->current_room->name, hunter->device);
             // we need to log that hunter is heading back to van
@@ -355,7 +510,21 @@ void hunter_turn(struct Hunter* hunter) {
             int b=rand_int_threadsafe(0, 12);
             // if k and b matches then return to exit room to change, small chance to return to exit
             if(k==b){
+
+                // RETURN TO EXIT
+
+                // check the definition if path finding it turned on
+                if(PATH_FINDING){
+                    bfs_search(hunter, &(hunter->path));
+                }
+
+
                 hunter->return_to_exit=true;
+
+
+
+                // RETURN TO EXIT
+
                 // we need to log that hunter is heading back to van
                 log_return_to_van(hunter->id, hunter->boredom, hunter->fear, hunter->current_room->name, hunter->device, true);
             }else{
@@ -466,7 +635,7 @@ void hunter_relocate(struct Hunter* hunter, struct Room* room, bool add_to_stack
 
 
         // only pushes to the breadstack if flag is true
-        if(add_to_stack){
+        if(add_to_stack && !PATH_FINDING){
             // pushes the next room to the top of the breadcrumb stack
             // to_room <- from_room <- prev
             // need to malloc memory
@@ -476,7 +645,7 @@ void hunter_relocate(struct Hunter* hunter, struct Room* room, bool add_to_stack
             new_node->room=room;
 
             // check if head is empty or not
-            if(hunter->path.head!=NULL){
+            if(hunter->path.head != NULL){
                 // prev would be the current head
                 new_node->prev=hunter->path.head;
             } else {

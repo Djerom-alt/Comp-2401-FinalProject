@@ -19,6 +19,7 @@
 #define HUNTER_FEAR_MAX 15 // original 15
 #define DEFAULT_GHOST_ID 68057
 #define MAX_EVIDENCE_TYPES 7
+#define PATH_FINDING true
 
 
 typedef unsigned char EvidenceByte; // Just giving a helpful name to unsigned char for evidence bitmasks
@@ -92,6 +93,18 @@ struct RoomNode {
     struct RoomNode* prev;
 };
 
+// path finding related struct
+struct RoomItem {
+    struct RoomNode* node;
+    struct RoomItem* next;
+};
+
+// path linked list
+struct PathList {
+    struct RoomItem* head;
+    struct RoomItem* tail;
+};
+
 // linked list
 struct RoomStack {
     struct RoomNode* head;
@@ -124,6 +137,8 @@ struct Hunter {
     char name[MAX_HUNTER_NAME];
     struct CaseFile* case_file;
     struct Room* current_room;
+    // pointer to the starting room, which is needed for path finding
+    struct Room* starting_room;
     // device used, keeping track of all device used
     struct DeviceCollection device_collection;
     enum EvidenceType device;
