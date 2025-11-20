@@ -13,7 +13,7 @@
 #define MAX_ROOM_NAME 64
 #define MAX_HUNTER_NAME 64
 #define MAX_ROOMS 24
-#define MAX_ROOM_OCCUPANCY 8
+#define MAX_ROOM_OCCUPANCY 8 // original 8
 #define MAX_CONNECTIONS 8
 #define ENTITY_BOREDOM_MAX 15 // original 15
 #define HUNTER_FEAR_MAX 15 // original 15
