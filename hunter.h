@@ -15,7 +15,6 @@ void hunter_turn(struct Hunter* hunter);
 // function that removes a hunter from their current room 
 void remove_from_room(struct Hunter* hunter);
 
-
 // this function is used to move a hunter from room a to room b
 void hunter_relocate(struct Hunter* hunter, struct Room* room, bool add_to_stack);
 

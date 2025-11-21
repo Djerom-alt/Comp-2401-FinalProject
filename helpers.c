@@ -17,6 +17,7 @@ void house_populate_rooms(struct House* house) {
     house->hunter_collection.array=NULL;
     house->case_file.solved=false;
     house->case_file.collected=0;
+    sem_init(&house->case_file.mutex, 0, 1); 
 
     room_init(house->rooms+0, "Van", true);
     room_init(house->rooms+1, "Hallway", false);

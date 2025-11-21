@@ -133,7 +133,6 @@ void insert_hunters(struct House* house) {
         // increase size
         house->hunter_collection.size++;
     }
-    
 }
 
 // thread function
@@ -236,12 +235,6 @@ void bfs_search(struct Hunter* hunter, struct RoomStack* stack) {
 
         }
 
-        // pop the head and replace with next
-        // before popping, free memory
-        // struct RoomItem* temp=path.head->next;
-        // free(path.head);
-        // // replace it
-        // path.head=temp;
 
         // instead of free-ing memory here
         struct RoomItem* temp=path.head;
@@ -308,19 +301,19 @@ void bfs_search(struct Hunter* hunter, struct RoomStack* stack) {
 void hunter_turn(struct Hunter* hunter) {
 
     // ignore if returning to exit
-    if(!(hunter->return_to_exit)) {
-        // check if current room has a ghostc
-        if(hunter->current_room->ghost != NULL){
-            // resets boredom to 0
-            hunter->boredom=0;
-            // increases fear by 1
-            hunter->fear++;
-        } else {
-            // increases boredom
-            hunter->boredom++;
-        }
+    // check if current room has a ghostc
+    if(hunter->current_room->ghost != NULL){
+        // resets boredom to 0
+        hunter->boredom=0;
+        // increases fear by 1
+        hunter->fear++;
+
+    } else {
+        // increases boredom
+        hunter->boredom++;
     }
 
+    
     //check if hunter in exit room, check if we have complete evidence
     if(hunter->current_room->is_exit && hunter->return_to_exit) {
         // reached van complete
@@ -394,6 +387,16 @@ void hunter_turn(struct Hunter* hunter) {
         // check size first, if false then reset it to 0
         if(MAX_EVIDENCE_TYPES <= hunter->device_collection.size){
             hunter->device_collection.size=0;
+        }
+
+        // when swapping we are gonna check the evidence was already found using it if not use it
+        while((hunter->device_collection.devices[hunter->device_collection.size] & hunter->case_file->collected) > 0) {
+            printf("already used: %s\n", evidence_to_string(hunter->device_collection.devices[hunter->device_collection.size]));
+            if(hunter->device_collection.size < MAX_EVIDENCE_TYPES){
+                hunter->device_collection.size++;
+            }else{
+                hunter->device_collection.size=0;
+            }
         }
 
         // pick the next device
@@ -486,6 +489,8 @@ void hunter_turn(struct Hunter* hunter) {
                 bfs_search(hunter, &(hunter->path));
             }
 
+            // use semphore to pause other threads from modifying
+            sem_wait(&hunter->case_file->mutex);
 
             // evidence found
             // clear appropriate evidence bit in the room's evidence byte
@@ -496,6 +501,7 @@ void hunter_turn(struct Hunter* hunter) {
             // set return to exit room
             hunter->return_to_exit=true;
 
+            sem_post(&hunter->case_file->mutex);
 
             // RETURN TO EXIT
 
@@ -503,13 +509,22 @@ void hunter_turn(struct Hunter* hunter) {
             log_evidence(hunter->id, hunter->boredom, hunter->fear, hunter->current_room->name, hunter->device);
             // we need to log that hunter is heading back to van
             log_return_to_van(hunter->id, hunter->boredom, hunter->fear, hunter->current_room->name, hunter->device, true);
+
         }else{
             // if no evidence found, continue moving to the next room
             // small chance that hunter will return ot eh van to change equipment
             int k=rand_int_threadsafe(0, 12);
             int b=rand_int_threadsafe(0, 12);
+
+            // maybe we can use boredom and fear to influence the decision to move or swap
+            int boredom=hunter->boredom;
+            int fear=hunter->fear;
+
+            float comb=(float) (boredom*k+fear*b)/100;
+            //printf("weighted value: %f\n", comb);
+
             // if k and b matches then return to exit room to change, small chance to return to exit
-            if(k==b){
+            if(0.5 < comb){
 
                 // RETURN TO EXIT
 
@@ -517,11 +532,7 @@ void hunter_turn(struct Hunter* hunter) {
                 if(PATH_FINDING){
                     bfs_search(hunter, &(hunter->path));
                 }
-
-
                 hunter->return_to_exit=true;
-
-
 
                 // RETURN TO EXIT
 
@@ -570,7 +581,6 @@ void hunter_turn(struct Hunter* hunter) {
     }
     return;
 }
-
 
 // find a random adjacent room
 void find_adjacent_room(struct Hunter* hunter, struct Room** room){

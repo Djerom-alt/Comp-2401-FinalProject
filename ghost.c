@@ -1,6 +1,6 @@
 #include "ghost.h"
 #include "helpers.h"
-// #include "stdio.h"
+#include "stdio.h"
 #include "string.h"
 
 // thread function
@@ -65,6 +65,7 @@ void ghost_turn(struct Ghost* ghost) {
 
     } else {
 
+        printf("Boredem currently: %d\n", ghost->boredom);
         // increases boredom
         ghost->boredom++;
 
@@ -84,25 +85,46 @@ void ghost_turn(struct Ghost* ghost) {
         // ghost can do nothing
         // ghost can haunt
         // first we choose randomly either to (idle or haunt) or move
-        int r = rand_int_threadsafe(0, 10);
-        // switch(r){
-        //     case 0:
-        //         // the program will either choose idle or haunt randomly
-        //         idle_or_haunt(ghost);
-        //         break;
-        //     case 1:
-        //         // this makes the ghost move to a adjacent room
-        //         ghost_move(ghost);
-        //         return;
+        int r = rand_int_threadsafe(0, 2);
+        switch(r){
+            case 0:
+                // the program will either choose idle or haunt randomly
+                idle_or_haunt(ghost);
+                return;
+            case 1:
+                // this makes the ghost move to a adjacent room
+                ghost_move(ghost);
+                return;
+        }
+
+        // // // much better for tweaking
+        // if(r <= 8){
+        //     idle_or_haunt(ghost);
+        // }else{
+        //     ghost_move(ghost);
         // }
 
-        // much better for tweaking
-        if(r <= 18){
-            idle_or_haunt(ghost);
-        }else{
-            ghost_move(ghost);
-            return;
-        }
+        // weighted decison based on ghost boredom
+        // float boredom_percent=(float) ghost->boredom/ENTITY_BOREDOM_MAX;
+        // // between 0 and 1
+        // float rand_percent=(float) rand_int_threadsafe(0, 100)/200;
+
+        // float total=(float) (boredom_percent+rand_percent)/1.5;
+       
+        // printf("%f weighted value\n", total);
+        // int random=rand_int_threadsafe(0, 100);
+        // printf("%d random number\n", random);
+        // printf("weighted random percent %f%s\n", (float)(((boredom_percent*random)/100 + 20))*100, "%");
+
+        // 20 percent to 100 percent , this still isnt random, 
+        // kinda locks the actions, we need to random value infleunced by boredom
+        // if(0.35 < total){
+        //     ghost_move(ghost);
+        // }else{
+        //     idle_or_haunt(ghost);
+        // }
+
+        // return; 
     }
 }
 
